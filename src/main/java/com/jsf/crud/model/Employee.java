@@ -1,4 +1,4 @@
-package com.mkyong.common.model;
+package com.jsf.crud.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

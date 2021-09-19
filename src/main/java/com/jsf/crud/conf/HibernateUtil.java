@@ -1,10 +1,10 @@
-package com.mkyong.common.conf;
+package com.jsf.crud.conf;
 
 
 import java.util.Properties;
 
-import com.mkyong.common.model.Employee;
-import com.mkyong.common.model.Organization;
+import com.jsf.crud.model.Employee;
+import com.jsf.crud.model.Organization;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -22,9 +22,9 @@ public class HibernateUtil {
                 // Hibernate settings equivalent to hibernate.cfg.xml's properties
                 Properties settings = new Properties();
                 settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/car_plates?useSSL=false");
-                settings.put(Environment.USER, "root");
-                settings.put(Environment.PASS, "1123");
+                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/test");
+                settings.put(Environment.USER, "");
+                settings.put(Environment.PASS, "");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 
                 settings.put(Environment.SHOW_SQL, "false");

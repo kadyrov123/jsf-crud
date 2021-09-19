@@ -1,9 +1,8 @@
-package com.mkyong.common.baked_bean;
+package com.jsf.crud.baked_bean;
 
-import com.mkyong.common.model.Employee;
-import com.mkyong.common.model.Organization;
-import com.mkyong.common.repository.EmployeeRepository;
-import com.sun.org.apache.xpath.internal.operations.Or;
+import com.jsf.crud.model.Employee;
+import com.jsf.crud.model.Organization;
+import com.jsf.crud.repository.EmployeeRepository;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;

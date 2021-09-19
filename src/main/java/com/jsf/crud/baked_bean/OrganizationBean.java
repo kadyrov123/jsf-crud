@@ -1,21 +1,11 @@
-package com.mkyong.common.baked_bean;
+package com.jsf.crud.baked_bean;
 
-import com.mkyong.common.model.Organization;
-import com.mkyong.common.repository.OrganizationRepository;
-import org.primefaces.event.FileUploadEvent;
-import org.primefaces.model.UploadedFile;
+import com.jsf.crud.model.Organization;
+import com.jsf.crud.repository.OrganizationRepository;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
 import javax.servlet.http.Part;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.List;
 
 @ManagedBean

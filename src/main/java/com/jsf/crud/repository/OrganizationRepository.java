@@ -1,7 +1,7 @@
-package com.mkyong.common.repository;
+package com.jsf.crud.repository;
 
-import com.mkyong.common.conf.HibernateUtil;
-import com.mkyong.common.model.Organization;
+import com.jsf.crud.conf.HibernateUtil;
+import com.jsf.crud.model.Organization;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

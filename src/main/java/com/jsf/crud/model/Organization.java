@@ -1,6 +1,4 @@
-package com.mkyong.common.model;
-
-import com.mkyong.common.model.Employee;
+package com.jsf.crud.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
