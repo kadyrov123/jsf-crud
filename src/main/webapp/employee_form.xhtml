@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+
+    <h:form rendered="#{employeeBean.employee == null or employeeBean.employee.id == 0 or employeeBean.employee.id == null}">
+        <h2>Employee Information System</h2>
+        <table>
+
+            <h:inputHidden id="orgId" value="#{employeeBean.employee.orgId}"/>
+            <tr>
+                <td>ФИО:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="fullName" value="#{employeeBean.employee.fullName}"
+                                 required="true"/>
+                    <h:message for="fullName" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Должность:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="position" value="#{employeeBean.employee.position}"
+                                 required="true"/>
+                    <h:message for="position" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Домашний телефон:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="homePhone" value="#{employeeBean.employee.homePhone}"
+                                 required="true"/>
+                    <h:message for="homePhone" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Мобильный телефон:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="mobilePhone" value="#{employeeBean.employee.mobilePhone}"
+                                 required="true"/>
+                    <h:message for="mobilePhone" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Рабочий телефон:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="workPhone" value="#{employeeBean.employee.workPhone}"
+                                 required="true"/>
+                    <h:message for="workPhone" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Почта:</td>
+                <td>
+                    <h:inputText label="Email Address"
+                                 id="email" value="#{employeeBean.employee.email}" required="true"/>
+                    <h:message for="email" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Домашний адрес:</td>
+                <td>
+                    <h:inputText label="Email Address"
+                                 id="homeAddress" value="#{employeeBean.employee.homeAddress}" required="true"/>
+                    <h:message for="homeAddress" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Банковские реквизиты:</td>
+                <td>
+                    <h:inputText label="Email Address"
+                                 id="bankDetails" value="#{employeeBean.employee.bankDetails}" required="true"/>
+                    <h:message for="bankDetails" style="color: red"/>
+                </td>
+            </tr>
+        </table>
+
+        <tr>
+            <td>
+                <button type="button">
+                    <a href="employees.xhtml" >Отмена</a>
+                </button>
+            </td>
+            <td>
+                <h:commandButton value="Save" action="#{employeeBean.saveEmployee()}"  />
+            </td>
+        </tr>
+
+    </h:form>
+
+    <h:form rendered="#{employeeBean.employee.id != 0 and employeeBean.employee.id != null}">
+        <h2>Employee Information System</h2>
+
+        <table>
+            <h:inputHidden id="id" value="#{employeeBean.employee.id}"/>
+            <h:inputHidden id="orgId" value="#{employeeBean.employee.orgId}"/>
+            <tr>
+                <td>ФИО:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="fullName" value="#{employeeBean.employee.fullName}"
+                                 required="true"/>
+                    <h:message for="fullName" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Должность:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="position" value="#{employeeBean.employee.position}"
+                                 required="true"/>
+                    <h:message for="position" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Домашний телефон:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="homePhone" value="#{employeeBean.employee.homePhone}"
+                                 required="true"/>
+                    <h:message for="homePhone" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Мобильный телефон:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="mobilePhone" value="#{employeeBean.employee.mobilePhone}"
+                                 required="true"/>
+                    <h:message for="mobilePhone" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Рабочий телефон:</td>
+                <td>
+                    <h:inputText label="Employee Name"
+                                 id="workPhone" value="#{employeeBean.employee.workPhone}"
+                                 required="true"/>
+                    <h:message for="workPhone" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Почта:</td>
+                <td>
+                    <h:inputText label="Email Address"
+                                 id="email" value="#{employeeBean.employee.email}" required="true"/>
+                    <h:message for="email" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Домашний адрес:</td>
+                <td>
+                    <h:inputText label="Email Address"
+                                 id="homeAddress" value="#{employeeBean.employee.homeAddress}" required="true"/>
+                    <h:message for="homeAddress" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Банковские реквизиты;:</td>
+                <td>
+                    <h:inputText label="Email Address"
+                                 id="bankDetails" value="#{employeeBean.employee.bankDetails}" required="true"/>
+                    <h:message for="bankDetails" style="color: red"/>
+                </td>
+            </tr>
+        </table>
+
+        <tr>
+            <td>
+                <button type="button">
+                    <a href="employees.xhtml" >Отмена</a>
+                </button>
+            </td>
+            <td>
+                <h:commandButton value="Edit"  action="#{employeeBean.updateEmployee()}"/>
+            </td>
+        </tr>
+
+    </h:form>
+
+
+
+</h:body>
+</html>
+

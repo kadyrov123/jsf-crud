@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+</h:head>
+<h:body>
+
+    <h2>Организации</h2>
+
+    <h:dataTable value = "#{organizationBean.organizationList}" var = "org"
+                 styleClass="order-table"
+                 headerClass="order-table-header"
+                 rowClasses="order-table-odd-row,order-table-even-row">
+
+        <h:column>
+            <f:facet name = "header">Name</f:facet>
+            #{org.name}
+        </h:column>
+
+        <h:column>
+            <f:facet name = "header">form Of Ownership</f:facet>
+            #{org.formOfOwnership}
+        </h:column>
+
+        <h:column>
+            <f:facet name = "header">address</f:facet>
+            #{org.address}
+        </h:column>
+
+        <h:column>
+            <f:facet name = "header">webpage</f:facet>
+            #{org.webpage}
+        </h:column>
+
+        <h:column>
+            <h:column>
+                <h:form>
+                    <h:commandLink value="Изменить" action="#{organizationBean.openOrganizationEditPage(org)}"></h:commandLink>
+                </h:form>
+            </h:column>
+            <h:column>
+                <h:form>
+                    <h:commandLink value="Удалить" action="#{organizationBean.deleteOrganization(org)}"
+                                   onclick="return confirm('Вы уверены что хотите удалить Организацию и всех ее Сотрудников ?')">
+                    </h:commandLink>
+                </h:form>
+            </h:column>
+        </h:column>
+    </h:dataTable>
+
+
+    <h:form>
+        <h:commandButton value="Добавить организацию" action="#{organizationBean.openOrganizationCreatePage}"></h:commandButton>
+    </h:form>
+</h:body>
+</html>
+

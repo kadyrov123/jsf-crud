@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+
+    <h:form rendered="#{organizationBean.organization == null or organizationBean.organization.id == 0 or organizationBean.organization.id == null}">
+        <h2>Добавить организацию</h2>
+        <table>
+
+            <tr>
+                <td>Название организации:</td>
+                <td>
+                    <h:inputText label="Название организации:"
+                                 id="name" value="#{organizationBean.organization.name}"
+                                 required="true"/>
+                    <h:message for="name" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Форма собственности:</td>
+                <td>
+                    <h:selectOneMenu label="Форма собственности:"
+                                     value="#{organizationBean.organization.formOfOwnership}">
+                        <f:selectItem itemLabel="formOfOwnership 1" itemValue="formOfOwnership 1" />
+                        <f:selectItem itemLabel="formOfOwnership 2" itemValue="formOfOwnership 2" />
+                        <f:selectItem itemLabel="formOfOwnership 3" itemValue="formOfOwnership 3" />
+                    </h:selectOneMenu>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Правовая форма:</td>
+                <td>
+                    <h:selectOneMenu label="Правовая форма:"
+                                     value="#{organizationBean.organization.legalForm}">
+                        <f:selectItem itemLabel="legalForm 1" itemValue="legalForm 1" />
+                        <f:selectItem itemLabel="legalForm 2" itemValue="legalForm 2" />
+                        <f:selectItem itemLabel="legalForm 3" itemValue="legalForm 3" />
+                    </h:selectOneMenu>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Правовая форма:</td>
+                <td>
+                    <h:inputText label="Правовая форма:"
+                                 id="directorFullName" value="#{organizationBean.organization.directorFullName}"
+                                 required="true"/>
+                    <h:message for="directorFullName" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Факс:</td>
+                <td>
+                    <h:inputText label="Факс:"
+                                 id="fax" value="#{organizationBean.organization.fax}"
+                                 required="true"/>
+                    <h:message for="fax" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Телефон:</td>
+                <td>
+                    <h:inputText label="Телефон:"
+                                 id="phoneNumber" value="#{organizationBean.organization.phoneNumber}"
+                                 required="true"/>
+                    <h:message for="phoneNumber" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Веб-страница:</td>
+                <td>
+                    <h:inputText label="Веб-страница:"
+                                 id="webpage" value="#{organizationBean.organization.webpage}"
+                                 required="true"/>
+                    <h:message for="webpage" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Номер лизенции:</td>
+                <td>
+                    <h:inputText label="Номер лизенции:"
+                                 id="licenseNumber" value="#{organizationBean.organization.licenseNumber}" required="true"/>
+                    <h:message for="licenseNumber" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Дата получения лицензии:</td>
+                <td>
+                    <h:inputText label="Дата получения лицензии:"
+                                 id="licenceReceiveDate" value="#{organizationBean.organization.licenceReceiveDate}" required="true">
+                        <f:convertDateTime pattern="MM-dd-yy" />
+                    </h:inputText> (mm-dd-yy)
+                    <h:message for="licenceReceiveDate" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Адрес:</td>
+                <td>
+                    <h:inputText label="Адрес:"
+                                 id="address" value="#{organizationBean.organization.address}"
+                                 required="true"/>
+                    <h:message for="address" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Файлы для прикрепления:</td>
+                <td>
+                    <h:inputText label="Файлы для прикрепления:"
+                                 id="files" value="#{organizationBean.organization.files}"
+                                 required="true"/>
+                    <h:message for="files" style="color: red"/>
+                </td>
+            </tr>
+
+
+        </table>
+
+        <tr>
+            <td>
+                <button type="button">
+                    <a href="organization.xhtml" >Отмена</a>
+                </button>
+            </td>
+            <td>
+                <h:commandButton value="Сохранить" action="#{organizationBean.saveOrganization()}"  />
+            </td>
+        </tr>
+
+    </h:form>
+
+    <h:form rendered="#{organizationBean.organization.id != 0 and organizationBean.organization.id != null}">
+        <h2>Изменить организацию</h2>
+        <table>
+
+            <h:inputHidden id="id" value="#{organizationBean.organization.id}"/>
+
+            <tr>
+                <td>Название организации:</td>
+                <td>
+                    <h:inputText label="Название организации:"
+                                 id="name" value="#{organizationBean.organization.name}"
+                                 required="true"/>
+                    <h:message for="name" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Форма собственности:</td>
+                <td>
+                    <h:selectOneMenu label="Форма собственности:"
+                                     value="#{organizationBean.organization.formOfOwnership}">
+                        <f:selectItem itemLabel="formOfOwnership 1" itemValue="formOfOwnership 1" />
+                        <f:selectItem itemLabel="formOfOwnership 2" itemValue="formOfOwnership 2" />
+                        <f:selectItem itemLabel="formOfOwnership 3" itemValue="formOfOwnership 3" />
+                    </h:selectOneMenu>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Правовая форма:</td>
+                <td>
+                    <h:selectOneMenu label="Правовая форма:"
+                                     value="#{organizationBean.organization.legalForm}">
+                        <f:selectItem itemLabel="legalForm 1" itemValue="legalForm 1" />
+                        <f:selectItem itemLabel="legalForm 2" itemValue="legalForm 2" />
+                        <f:selectItem itemLabel="legalForm 3" itemValue="legalForm 3" />
+                    </h:selectOneMenu>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>ФИО руководителя:</td>
+                <td>
+                    <h:inputText label="Правовая форма:"
+                                 id="directorFullName" value="#{organizationBean.organization.directorFullName}"
+                                 required="true"/>
+                    <h:message for="directorFullName" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Факс:</td>
+                <td>
+                    <h:inputText label="Факс:"
+                                 id="fax" value="#{organizationBean.organization.fax}"
+                                 required="true"/>
+                    <h:message for="fax" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Телефон:</td>
+                <td>
+                    <h:inputText label="Телефон:"
+                                 id="phoneNumber" value="#{organizationBean.organization.phoneNumber}"
+                                 required="true"/>
+                    <h:message for="phoneNumber" style="color: red"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Веб-страница:</td>
+                <td>
+                    <h:inputText label="Веб-страница:"
+                                 id="webpage" value="#{organizationBean.organization.webpage}"
+                                 required="true"/>
+                    <h:message for="webpage" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Номер лизенции:</td>
+                <td>
+                    <h:inputText label="Номер лизенции:"
+                                 id="licenseNumber" value="#{organizationBean.organization.licenseNumber}" required="true"/>
+                    <h:message for="licenseNumber" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Дата получения лицензии:</td>
+                <td>
+                    <h:inputText label="Дата получения лицензии:"
+                                 id="licenceReceiveDate" value="#{organizationBean.organization.licenceReceiveDate}" required="true">
+                        <f:convertDateTime pattern="MM-dd-yy" />
+                    </h:inputText> (mm-dd-yy)
+                    <h:message for="licenceReceiveDate" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Адрес:</td>
+                <td>
+                    <h:inputText label="Адрес:"
+                                 id="address" value="#{organizationBean.organization.address}"
+                                 required="true"/>
+                    <h:message for="address" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Файлы для прикрепления:</td>
+                <td>
+                    <h:inputText label="Файлы для прикрепления:"
+                                 id="files" value="#{organizationBean.organization.files}"
+                                 required="true"/>
+                    <h:message for="files" style="color: red"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <h:form>
+                        <h:commandButton value="Сотрудники" action="#{employeeBean.openEmployeesPage(organizationBean.organization)}"></h:commandButton>
+                    </h:form>
+                </td>
+            </tr>
+
+        </table>
+        <br/>
+        <br/>
+
+        <tr>
+            <td>
+                <h:commandButton value="Отмена" action="organization" />
+            </td>
+            <td>
+                <h:commandButton value="Сохранить" action="#{organizationBean.updateOrganization()}" />
+            </td>
+        </tr>
+    </h:form>
+
+
+
+
+</h:body>
+</html>
+

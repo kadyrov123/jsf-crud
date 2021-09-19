@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+</h:head>
+<h:body>
+
+
+    <h5><a href="organization.xhtml">Организация</a> > Сотрудники</h5>
+
+
+    <h:dataTable value = "#{employeeBean.employeeList}" var = "emp"
+                 styleClass = "orgTable"
+                 headerClass = "orgTableHeader"
+                 rowClasses = "orgTableOddRow,orgTableEvenRow">
+
+        <h:column>
+            <f:facet name = "header">Id</f:facet>
+            #{emp.id}
+        </h:column>
+
+        <h:column>
+            <f:facet name = "header">Name</f:facet>
+            #{emp.fullName}
+        </h:column>
+
+        <h:column>
+            <f:facet name = "header">Position</f:facet>
+            #{emp.position}
+        </h:column>
+
+        <h:column>
+            <f:facet name = "header">Work Phone</f:facet>
+            #{emp.workPhone}
+        </h:column>
+
+
+        <h:column>
+            <h:column>
+                <h:form>
+                    <h:commandLink value="Изменить" action="#{employeeBean.openEmployeeEditPage(emp)}"></h:commandLink>
+                </h:form>
+            </h:column>
+            <h:column>
+                <h:form>
+                    <h:commandLink value="Удалить" action="#{employeeBean.deleteEmployee(emp)}"
+                                   onclick="return confirm('Вы уверены что хотите удалить Сотрудника ?')">
+                    </h:commandLink>
+                </h:form>
+            </h:column>
+        </h:column>
+    </h:dataTable>
+
+
+    <h:form>
+        <h:commandButton value="Добавить сотрудника" action="employee_form"></h:commandButton>
+    </h:form>
+</h:body>
+</html>
+
